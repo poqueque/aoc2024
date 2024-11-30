@@ -1,0 +1,12 @@
+name: aoc2024
+description: Advent of Code 2024 in Dart
+version: 1.0.0
+repository: https://github.com/poqueque/aoc2024
+
+environment:
+  sdk: ^3.2.1
+
+dependencies:
+  http: any
+  collection: any
+  lints: any
