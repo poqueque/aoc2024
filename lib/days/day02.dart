@@ -1,7 +1,6 @@
-import '../main.dart';
+import '../day.dart';
 
 class Day02 extends Day {
-
   @override
   bool get completed => true;
 
@@ -41,19 +40,19 @@ class Day02 extends Day {
     if (levels.length == 1) return true;
     var isIncreasing = levels[1] > levels[0];
     for (var i = 1; i < levels.length; i++) {
-      if (levels[i] == levels[i-1]) {
+      if (levels[i] == levels[i - 1]) {
         return false;
       }
-      if (levels[i] > levels[i-1] + 3) {
+      if (levels[i] > levels[i - 1] + 3) {
         return false;
       }
-      if (levels[i] < levels[i-1] - 3) {
+      if (levels[i] < levels[i - 1] - 3) {
         return false;
       }
-      if (i > 1 && levels[i] < levels[i-1] && isIncreasing) {
+      if (i > 1 && levels[i] < levels[i - 1] && isIncreasing) {
         return false;
       }
-      if (i > 1 && levels[i] > levels[i-1] && !isIncreasing) {
+      if (i > 1 && levels[i] > levels[i - 1] && !isIncreasing) {
         return false;
       }
     }

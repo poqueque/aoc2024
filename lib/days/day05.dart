@@ -1,25 +1,23 @@
-
-import '../main.dart';
+import '../day.dart';
 
 class Day05 extends Day {
-
   @override
-  bool get completed => false;
+  bool get completed => true;
 
-  List<(int,int)> orderRules = [];
+  List<(int, int)> orderRules = [];
   List<List<int>> reports = [];
 
   @override
   init() {
     for (var line in inputList) {
-      if (line.contains("|")){
-        orderRules.add((int.parse(line.split("|")[0]), int.parse(line.split("|")[1])));
-      } else if (line.contains(",")){
+      if (line.contains("|")) {
+        orderRules.add(
+            (int.parse(line.split("|")[0]), int.parse(line.split("|")[1])));
+      } else if (line.contains(",")) {
         reports.add(line.split(",").map((e) => int.parse(e)).toList());
       }
     }
   }
-
 
   @override
   part1() {
@@ -37,7 +35,7 @@ class Day05 extends Day {
     var sum = 0;
     for (var report in reports) {
       if (!isValid(report)) {
-        while(!isValid(report)) {
+        while (!isValid(report)) {
           report = order(report);
         }
         sum += getMiddle(report);

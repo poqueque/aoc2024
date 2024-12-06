@@ -1,4 +1,4 @@
-import '../main.dart';
+import '../day.dart';
 
 class Day01 extends Day {
   @override
@@ -17,12 +17,13 @@ class Day01 extends Day {
     list1.sort();
     list2.sort();
     for (var i = 0; i < list1.length; i++) {
-      var d = list1[i]- list2[i];
+      var d = list1[i] - list2[i];
       if (d < 0) d = -d;
       sum += d;
     }
     return sum;
   }
+
   @override
   part2() {
     var sum = 0;
@@ -37,7 +38,7 @@ class Day01 extends Day {
     list2.sort();
     for (var i = 0; i < list1.length; i++) {
       var sim = list2.where((element) => element == list1[i]).length;
-        list1[i] *= sim;
+      list1[i] *= sim;
       sum += list1[i];
     }
     return sum;

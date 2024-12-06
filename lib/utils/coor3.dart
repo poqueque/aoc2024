@@ -50,8 +50,9 @@ class Coor3 {
   }
 
   @override
-  bool operator ==(dynamic other) {
-    return (x == other.x && y == other.y && z == other.z);
+  bool operator ==(Object other) {
+    if (other is Coor3) return (x == other.x && y == other.y && z == other.z);
+    return false;
   }
 
   @override

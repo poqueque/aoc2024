@@ -4,4 +4,6 @@ extension StringExtensions on String {
 
   String changeAt(int pos, String val) =>
       substring(0, pos) + val + substring(pos + 1);
+
+  String reverse() => split('').reversed.join();
 }

@@ -1,4 +1,4 @@
-import '../main.dart';
+import '../day.dart';
 
 class Day15 extends Day {
   @override
