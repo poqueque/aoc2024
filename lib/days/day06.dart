@@ -5,7 +5,7 @@ import '../utils/coor.dart';
 
 class Day06 extends Day {
   @override
-  bool get completed => false;
+  bool get completed => true;
 
   late Map<Coor, String> grid;
   late int maxX, maxY;
