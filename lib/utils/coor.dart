@@ -133,6 +133,10 @@ class Coor {
     return sqrt(pow(x - b.x, 2) + pow(y - b.y, 2));
   }
 
+  Coor doubleDistance(Coor b) {
+    return Coor(x + (b.x - x), (y + (b.y - y)));
+  }
+
   List<Coor> closestTo(double d) {
     List<Coor> list = [];
     for (int i = x - d.floor() - 1; i < x + d.floor() + 1; i++) {
@@ -171,6 +175,12 @@ class Coor {
       }
     }
     return list;
+  }
+
+  bool outOfBounds(int maxX, int maxY) {
+    if (x < 0 || x >= maxX) return true;
+    if (y < 0 || y >= maxY) return true;
+    return false;
   }
 }
 
