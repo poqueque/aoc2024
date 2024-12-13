@@ -2,11 +2,10 @@ import '../day.dart';
 
 class Day11 extends Day {
   @override
-  bool get completed => false;
+  bool get completed => true;
 
   List<int> stones = [];
   Map<(int, int), int> cache = {};
-  Map<int, List<int>> cache5 = {};
 
   @override
   init() {
