@@ -2,7 +2,7 @@ import '../day.dart';
 
 class Day13 extends Day {
   @override
-  bool get completed => false;
+  bool get completed => true;
 
   List<(Equation, Equation)> equations = [];
 
