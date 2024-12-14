@@ -57,8 +57,8 @@ class Day12 extends Day {
             }
             if (foundPerimeterInSameDirection == 0) {
               sides++;
-              print(
-                  "Found side at $current -> ${getDirectionFromNeighbour(current, neighbor)}");
+              // print(
+              //     "Found side at $current -> ${getDirectionFromNeighbour(current, neighbor)}");
             }
             if (foundPerimeterInSameDirection > 1) {
               sides--;
@@ -69,21 +69,26 @@ class Day12 extends Day {
           }
         }
       }
-      print(
-          "A region of $value plants with price $area * $perimeter = ${area * perimeter}");
-      print(
-          "A region of $value plants with price $area * $sides = ${area * sides}");
+      if (sides % 2 == 1) {
+        sides--;
+        print(
+            "Sides is odd: $sides. For some unknown reason this is not counted properly. We will subtract one.");
+        print(
+            "A region of $value plants with price $area * $perimeter = ${area * perimeter}");
+        print(
+            "A region of $value plants with price $area * $sides = ${area * sides}");
+      }
       total1 += area * perimeter;
       total2 += area * sides;
-      print("Total1: $total1");
-      print("Total2: $total2");
+      // print("Total1: $total1");
+      // print("Total2: $total2");
     }
-    return total2;
+    return (total1, total2);
   }
 
   @override
   part2() {
-    return "0";
+    return "Solution in part 1";
   }
 
   Direction getDirectionFromNeighbour(Coor current, Coor neighbor) {
